@@ -1,14 +1,15 @@
 package avcodec
+
 import "C"
 
-func (cp *CodecParameters) CodecType() MediaType {
+func (cp *AvCodecParameters) CodecType() MediaType {
 	return MediaType(cp.codec_type)
 }
 
-func (cp *CodecParameters) CodecId() CodecId {
+func (cp *AvCodecParameters) CodecId() CodecId {
 	return CodecId(cp.codec_id)
 }
 
-func (cp *CodecParameters) SetCodecTag(tag uint) {
+func (cp *AvCodecParameters) SetCodecTag(tag uint) {
 	cp.codec_tag = C.uint(tag)
 }
